@@ -7,6 +7,7 @@ import {AcTableService} from '../../services/ac-table.service';
     selector: '[ac-table-header]',
     templateUrl: './ac-table-header.component.html',
     styleUrls: ['./ac-table-header.component.less'],
+    standalone: false
 })
 export class AcTableHeaderComponent {
     @ViewChild('headerRow', {static: true}) headerRow: any;

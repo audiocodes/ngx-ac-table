@@ -9,6 +9,7 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
     selector: '[ac-table-body]',
     templateUrl: './ac-table-body.component.html',
     styleUrls: ['./ac-table-body.component.less'],
+    standalone: false
 })
 export class AcTableBodyComponent implements AfterViewInit {
     // @ts-ignore

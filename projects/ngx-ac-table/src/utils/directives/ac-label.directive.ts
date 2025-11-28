@@ -2,7 +2,8 @@ import {Directive, ElementRef, HostBinding, Input, NgZone} from '@angular/core';
 // import $ from 'jquery';
 
 @Directive({
-    selector: '[acLabel]'
+    selector: '[acLabel]',
+    standalone: false
 })
 export class AcLabelDirective {
     @HostBinding('class.acLabelDirective') acLabelDirective = true;
