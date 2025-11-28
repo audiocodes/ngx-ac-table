@@ -62,7 +62,8 @@ import {AcPaginationItemsTemplateType} from '../../../utils/components/ac-pagina
     host: {
         '[class.rtl]': 'rtl'
     },
-    providers: [{provide: AC_TABLE_COMPONENT, useExisting: AcTableComponent}]
+    providers: [{ provide: AC_TABLE_COMPONENT, useExisting: AcTableComponent }],
+    standalone: false
 })
 export class AcTableComponent implements AcTableSharedInputs, IAcTableComponent, OnInit, AfterViewInit {
     static readonly AC_TABLE_STATE_AND_CONFIGS = 'tableState';

@@ -12,8 +12,9 @@ import {AcPagingEvent} from '../../../utils/components/ac-pagination/ac-paging.i
     selector: 'ac-table-cursor',
     templateUrl: '../ac-table/ac-table.component.html',
     styleUrls: ['../ac-table/ac-table.component.less'],
-    providers: [{provide: AcTableComponent, useExisting: forwardRef(() => AcTableCursorComponent)}],
+    providers: [{ provide: AcTableComponent, useExisting: forwardRef(() => AcTableCursorComponent) }],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AcTableCursorComponent extends AcTableComponent {
 

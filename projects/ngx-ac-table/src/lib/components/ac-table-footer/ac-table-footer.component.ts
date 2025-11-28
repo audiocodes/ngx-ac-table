@@ -6,6 +6,7 @@ import {AcTableService} from '../../services/ac-table.service';
     selector: '[ac-table-footer]',
     templateUrl: './ac-table-footer.component.html',
     styleUrls: ['./ac-table-footer.component.less'],
+    standalone: false
 })
 export class AcTableFooterComponent {
     @Input() columns: AcTableColumn[];
