@@ -3,17 +3,10 @@ import {ChangeDetectionStrategy, Component, forwardRef, Input, ViewChild,} from 
 // import {cloneDeep} from 'lodash';
 import {AcTableActions} from '../../state/ac-table.actions';
 import {AcTableState} from '../../state/ac-table.state';
-import {AC_TABLE_STATE_TOKEN} from '../../state/ac-table-state.models';
+import {AC_TABLE_STATE_TOKEN, AcTableCursor} from '../../state/ac-table-state.models';
 import {AcTableComponent} from '../ac-table/ac-table.component';
 import {AcPaginationComponent} from '../../../utils/components/ac-pagination/ac-pagination.component';
 import {AcPagingEvent} from '../../../utils/components/ac-pagination/ac-paging.interface';
-
-export interface AcTableCursor {
-    [key: string]: any;
-    current?: AcTableCursor;
-    after?: string;
-    before?: string;
-}
 
 @Component({
     selector: 'ac-table-cursor',

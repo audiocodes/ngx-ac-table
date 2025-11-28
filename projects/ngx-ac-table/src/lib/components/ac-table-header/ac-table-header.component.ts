@@ -1,7 +1,6 @@
 import {Component, DestroyRef, EventEmitter, Inject, Input, Output, ViewChild} from '@angular/core';
-import {AC_TABLE_CONFIG, AcTableColumn, AcTableConfig} from '../../models/ac-table.interface';
+import {AC_TABLE_COMPONENT, AC_TABLE_CONFIG, AcTableColumn, AcTableConfig, IAcTableComponent} from '../../models/ac-table.interface';
 import {AcTableService} from '../../services/ac-table.service';
-import {AcTableComponent} from '../ac-table/ac-table.component';
 
 
 @Component({
@@ -14,7 +13,7 @@ export class AcTableHeaderComponent {
     @Input() columns: AcTableColumn[];
     @Output() columnSort = new EventEmitter<AcTableColumn>();
     mutationObserver: MutationObserver;
-    constructor(public acTableComponent: AcTableComponent,
+    constructor(@Inject(AC_TABLE_COMPONENT) public acTableComponent: IAcTableComponent,
                 public acTableService: AcTableService,
                 private destroyRef: DestroyRef,
                 @Inject(AC_TABLE_CONFIG) public acTableConfig: AcTableConfig,
