@@ -26,6 +26,8 @@ export type AcTableConfig = Partial<AcTableSharedInputs>;
 
 export const AC_TABLE_CONFIG = new InjectionToken<AcTableConfig>('ac.table.config');
 
+export const AC_TABLE_COMPONENT = new InjectionToken<IAcTableComponent>('ac.table.component');
+
 export enum ESelectBehavior {
     select = 'select',
     toggle = 'toggle',
@@ -160,4 +162,27 @@ export interface RefreshTableProperties {
     gotoPage?: number;
     entityName?: string;
     selection?: any[];
+}
+
+export interface IAcTableComponent {
+    tableId: string;
+    vsComponent: any; // CdkVirtualScrollViewport
+    selection: any;
+    isFocused: boolean;
+    groupBy: any;
+    expandableRows: boolean;
+    _rows: AcTableRow[];
+    selectionAnchor: any;
+    setColumnsWidth(): void;
+    selectRow(event: any, row: any, options?: any): void;
+    sortingMap: any;
+    minCellWidth: number;
+    _sorting: any[];
+    tableCellContextIndex: number;
+    getTableCellContext(): any;
+    userSelectState: boolean;
+    disableVirtualScroll: boolean;
+    toggleGroupCollapsedState(row: any): void;
+    acTableExpandedRowDirective: any;
+    groupedRows: any;
 }
