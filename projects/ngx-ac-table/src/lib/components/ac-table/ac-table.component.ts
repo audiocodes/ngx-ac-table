@@ -32,7 +32,9 @@ import {
     AcTableSorter,
     ELayoutType,
     ESelectBehavior,
-    RefreshTableProperties
+    RefreshTableProperties,
+    AC_TABLE_COMPONENT,
+    IAcTableComponent
 } from '../../models/ac-table.interface';
 
 import {CdkVirtualScrollViewport} from '@angular/cdk/scrolling';
@@ -59,9 +61,11 @@ import {AcPaginationItemsTemplateType} from '../../../utils/components/ac-pagina
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class.rtl]': 'rtl'
-    }
+    },
+    providers: [{ provide: AC_TABLE_COMPONENT, useExisting: AcTableComponent }],
+    standalone: false
 })
-export class AcTableComponent implements AcTableSharedInputs, OnInit, AfterViewInit {
+export class AcTableComponent implements AcTableSharedInputs, IAcTableComponent, OnInit, AfterViewInit {
     static readonly AC_TABLE_STATE_AND_CONFIGS = 'tableState';
     @ContentChild(AcTableExpandedRowDirective, {static: true}) acTableExpandedRowDirective: AcTableExpandedRowDirective;
     @ContentChild('noDataPlaceholder') noDataPlaceholderContentTemplate: TemplateRef<any>;

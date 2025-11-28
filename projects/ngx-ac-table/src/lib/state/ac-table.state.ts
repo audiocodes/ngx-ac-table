@@ -3,9 +3,8 @@ import {Action, createSelector, State, StateContext, Store} from '@ngxs/store';
 
 import {cloneDeep} from 'lodash';
 import {AcTableActions} from './ac-table.actions';
-import {AC_TABLE_STATE_DEFAULTS, AC_TABLE_STATE_TOKEN, AcTableStateModels} from './ac-table-state.models';
+import {AC_TABLE_STATE_DEFAULTS, AC_TABLE_STATE_TOKEN, AcTableStateModels, AcTableCursor} from './ac-table-state.models';
 import {AcTableDataState} from './ac-table-data/ac-table-data.state';
-import {AcTableCursor} from '../components/ac-table-cursor/ac-table-cursor.component';
 
 @State({
     name: AC_TABLE_STATE_TOKEN,

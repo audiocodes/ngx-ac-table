@@ -9,8 +9,9 @@ import {StringUtils} from '../../../utils/string-utils';
     selector: 'ac-table-client',
     templateUrl: '../ac-table/ac-table.component.html',
     styleUrls: ['../ac-table/ac-table.component.less'],
-    providers: [{provide: AcTableComponent, useExisting: forwardRef(() => AcTableClientComponent)}],
+    providers: [{ provide: AcTableComponent, useExisting: forwardRef(() => AcTableClientComponent) }],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AcTableClientComponent extends AcTableComponent {
 

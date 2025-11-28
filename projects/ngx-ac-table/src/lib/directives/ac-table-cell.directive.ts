@@ -5,6 +5,7 @@ import {StringUtils} from '../../utils/string-utils';
 
 @Directive({
     selector: '[acTableCell]',
+    standalone: false
 })
 export class AcTableCellDirective {
     @Input() acTableCell;
