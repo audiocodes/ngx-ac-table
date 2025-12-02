@@ -1,15 +1,15 @@
-import {AfterViewInit, Component, DestroyRef, ElementRef, HostBinding, HostListener, Input, QueryList, TemplateRef, ViewChildren} from '@angular/core';
-import {AcTableColumn, AcTableRow} from '../../models/ac-table.interface';
+import {AfterViewInit, Component, DestroyRef, ElementRef, HostBinding, HostListener, Inject, Input, QueryList, TemplateRef, ViewChildren} from '@angular/core';
+import {AC_TABLE_COMPONENT, AcTableColumn, AcTableRow, IAcTableComponent} from '../../models/ac-table.interface';
 import {AcTableService} from '../../services/ac-table.service';
 import {Store} from '@ngxs/store';
 import {AcTableState} from '../../state/ac-table.state';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {AcTableComponent} from '../ac-table/ac-table.component';
 
 @Component({
     selector: '[ac-table-body]',
     templateUrl: './ac-table-body.component.html',
     styleUrls: ['./ac-table-body.component.less'],
+    standalone: false
 })
 export class AcTableBodyComponent implements AfterViewInit {
     // @ts-ignore
@@ -24,7 +24,7 @@ export class AcTableBodyComponent implements AfterViewInit {
     rowsExpansion;
     startIndex = 0;
 
-    constructor(public acTableComponent: AcTableComponent,
+    constructor(@Inject(AC_TABLE_COMPONENT) public acTableComponent: IAcTableComponent,
                 public acTableService: AcTableService,
                 private destroyRef: DestroyRef,
                 private store: Store) {

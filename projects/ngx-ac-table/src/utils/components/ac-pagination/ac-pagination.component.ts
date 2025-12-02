@@ -7,7 +7,8 @@ export type AcPaginationItemsTemplateType = 'itemsRange' | 'itemsCount';
     selector: 'ac-pagination',
     templateUrl: './ac-pagination.component.html',
     styleUrls: ['./ac-pagination.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AcPaginationComponent implements AfterViewInit {
 
